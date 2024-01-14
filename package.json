@@ -1,0 +1,22 @@
+{
+	"name": "margalitaf",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@fortawesome/fontawesome-free": "^6.5.1",
+		"flipbook-vue": "^1.0.0-beta.4",
+		"jquery": "^3.7.1",
+		"vue": "^3.4.5",
+		"vue-router": "^4.2.5"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^4.5.2",
+		"vite": "^5.0.10"
+	}
+}
