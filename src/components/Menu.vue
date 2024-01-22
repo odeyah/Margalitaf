@@ -31,7 +31,7 @@ export default {
 		return {
 			images: [...initialImages, ...initialImages],
 			mainMenu: [
-				{ he: 'בית', en: 'Home' },
+				{ he: 'בית', en: '' },
 				{ he: 'אודות', en: 'About' },
 				{ he: 'חוגים', en: 'Courses' },
 				{ he: 'גלריה', en: 'Gallery' },
@@ -81,13 +81,6 @@ export default {
 			<span class="overlay-text">בס"ד</span>
 		</div>
 		<div class="content" style="width: 775px" ref="carousel">
-			<!-- <div class="slideshow-container" style="width: 775px">
-				<div class="slider" :style="{ transform: `translateX(-${currentOffset}px)` }">
-					<div v-for="(image, index) in images" :key="index" class="slide">
-						<img :src="image" alt="Slideshow Image" class="slide-image" style="width: 100px; height: 100px" />
-					</div>
-				</div>
-			</div> -->
 			<div class="carousel-container">
 				<div class="carousel" :style="{ transform: `translateX(${currentShift}px)` }">
 					<div class="carousel-item"><img src="../assets/cheese.jpg" alt="Image 1" /></div>

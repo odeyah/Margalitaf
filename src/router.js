@@ -1,20 +1,15 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './components/Home.vue';
-import About from './components/About.vue';
-import Baking from './components/Baking.vue';
-import Contact from './components/Contact.vue';
-import Cooking from './components/Cooking.vue';
-import Courses from './components/Courses.vue';
-import Crafts from './components/Crafts.vue';
-import Gallery from './components/Gallery.vue';
-import Jewelry from './components/Jewelry.vue';
-import Origami from './components/Origami.vue';
-import Rhythmics from './components/Rhythmics.vue';
-
-// ... import other components
-
-Vue.use(Router);
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from './views/Home.vue';
+import About from './views/About.vue';
+import Baking from './views/Baking.vue';
+import Contact from './views/Contact.vue';
+import Cooking from './views/Cooking.vue';
+import Courses from './views/Courses.vue';
+import Crafts from './views/Crafts.vue';
+import Gallery from './views/Gallery.vue';
+import Jewelry from './views/Jewelry.vue';
+import Origami from './views/Origami.vue';
+import Rhythmics from './views/Rhythmics.vue';
 
 const routes = [
 	{
@@ -23,7 +18,7 @@ const routes = [
 		component: Home,
 	},
 	{
-		path: '/about',
+		path: '/About',
 		name: 'About',
 		component: About,
 	},
@@ -74,9 +69,9 @@ const routes = [
 	},
 ];
 
-const router = new Router({
-	mode: 'history',
-	base: process.env.BASE_URL,
+// Create router instance
+const router = createRouter({
+	history: createWebHistory('/'),
 	routes,
 });
 
