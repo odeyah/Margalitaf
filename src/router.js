@@ -10,6 +10,7 @@ import Gallery from './views/Gallery.vue';
 import Jewelry from './views/Jewelry.vue';
 import Origami from './views/Origami.vue';
 import Rhythmics from './views/Rhythmics.vue';
+import notFound from './views/notFound.vue';
 
 const routes = [
 	{
@@ -67,6 +68,7 @@ const routes = [
 		name: 'Rhythmics',
 		component: Rhythmics,
 	},
+	{ path: '/:pathMatch(.*)*', name: 'NotFound', component: notFound },
 ];
 
 // Create router instance

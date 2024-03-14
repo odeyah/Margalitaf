@@ -1,14 +1,10 @@
 <script>
-import cheeseIMG from '../assets/cheese.jpg';
-import cookiesIMG from '../assets/cookies.jpg';
+import cookingIMG from '../assets/cooking.jpg';
+import craftsIMG from '../assets/crafts2.jpg';
+import origamiIMG from '../assets/Origami.jpg';
 import indexIMG from '../assets/index.jpg';
-import monsterIMG from '../assets/monster.jpg';
-import tableIMG from '../assets/table.jpg';
-import table1IMG from '../assets/table1.jpg';
-import LogoIMG from '../assets/Logo.jpg';
-import purimIMG from '../assets/purim.jpg';
-import hartIMG from '../assets/hart.jpg';
-import rainbowIMG from '../assets/rainbow.jpg';
+import jewelryIMG from '../assets/jewelry.png';
+import rhythmicsIMG from '../assets/rhythmics.jpg';
 import Baking from './Baking.vue';
 import Origami from './Origami.vue';
 import Cooking from './Cooking.vue';
@@ -22,40 +18,40 @@ export default {
 		return {
 			courses: [
 				{
-					img: cheeseIMG,
+					img: indexIMG,
 					header: 'חוג אפייה',
 					paragraph: 'חוג אפייה בקבוצות 3.5-7 ו-8-12',
-					name: Baking,
+					path: 'Baking',
 				},
 				{
-					img: monsterIMG,
+					img: craftsIMG,
 					header: 'חוג יצירה בעקבות סיפור',
 					paragraph: 'שומעים סיפור ומכינים יצירה שקשורה לסיפור',
-					name: Crafts,
+					path: 'Crafts',
 				},
 				{
-					img: rainbowIMG,
+					img: origamiIMG,
 					header: 'חוג אוריגמי ועיצוב מפיות',
 					paragraph: 'בכל חוג נכין צורת אוריגמי ונקפל מפיות בצורה חדשה',
-					name: Origami,
+					path: 'Origami',
 				},
 				{
-					img: indexIMG,
+					img: cookingIMG,
 					header: 'חוג בישול',
 					paragraph: 'חוג בישול לילדים מגיל 9-12',
-					name: Cooking,
+					path: 'Cooking',
 				},
 				{
-					img: table1IMG,
+					img: jewelryIMG,
 					header: 'חוג תכשיטנות',
 					paragraph: 'חוג תכשיטנות לילדים בו נכין צמידים ושרשראות',
-					name: Jewelry,
+					path: 'Jewelry',
 				},
 				{
-					img: hartIMG,
+					img: rhythmicsIMG,
 					header: 'חוג ריתמיקה',
 					paragraph: 'חוג ריתמיקה לילדים',
-					name: Rhythmics,
+					path: 'Rhythmics',
 				},
 			],
 		};
@@ -86,7 +82,7 @@ export default {
 		<p style="padding-right: 50px">לפרטים נוספים והרשמה התקשרו למרגלית 0528460331</p>
 		<br />
 		<div class="course-area">
-			<router-link v-for="(course, index) in courses" :key="index" :to="`/Course/${course.en}`" class="course">
+			<router-link v-for="(course, index) in courses" :key="index" :to="`/Course/${course.path}`" class="course">
 				<img :src="course.img" alt="Course Image" style="height: 150px" />
 				<h3>{{ course.header }}</h3>
 				<p>{{ course.paragraph }}</p>

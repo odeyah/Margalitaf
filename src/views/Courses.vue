@@ -1,20 +1,10 @@
 <script>
-import cheeseIMG from '../assets/cheese.jpg';
-import cookiesIMG from '../assets/cookies.jpg';
-import indexIMG from '../assets/index.jpg';
-import monsterIMG from '../assets/monster.jpg';
-import tableIMG from '../assets/table.jpg';
-import table1IMG from '../assets/table1.jpg';
-import LogoIMG from '../assets/Logo.jpg';
-import purimIMG from '../assets/purim.jpg';
-import hartIMG from '../assets/hart.jpg';
-import rainbowIMG from '../assets/rainbow.jpg';
-import Baking from './Baking.vue';
-import Origami from './Origami.vue';
-import Cooking from './Cooking.vue';
-import Rhythmics from './Rhythmics.vue';
-import Crafts from './Crafts.vue';
-import Jewelry from './Jewelry.vue';
+import cookingIMG from '../assets/cooking.jpg';
+import craftsIMG from '../assets/crafts2.jpg';
+import origamiIMG from '../assets/Origami.jpg';
+import bakingIMG from '../assets/index.jpg';
+import jewelryIMG from '../assets/jewelry.png';
+import rhythmicsIMG from '../assets/rhythmics.jpg';
 
 export default {
 	name: 'Courses',
@@ -22,40 +12,40 @@ export default {
 		return {
 			courses: [
 				{
-					img: cheeseIMG,
+					img: bakingIMG,
 					header: 'חוג אפייה',
 					paragraph: 'חוג אפייה בקבוצות 3.5-7 ו-8-12',
-					name: Baking,
+					name: 'Baking',
 				},
 				{
-					img: monsterIMG,
+					img: craftsIMG,
 					header: 'חוג יצירה בעקבות סיפור',
 					paragraph: 'שומעים סיפור ומכינים יצירה שקשורה לסיפור',
-					name: Crafts,
+					name: 'Crafts',
 				},
 				{
-					img: rainbowIMG,
+					img: origamiIMG,
 					header: 'חוג אוריגמי ועיצוב מפיות',
 					paragraph: 'בכל חוג נכין צורת אוריגמי ונקפל מפיות בצורה חדשה',
-					name: Origami,
+					name: 'Origami',
 				},
 				{
-					img: indexIMG,
+					img: cookingIMG,
 					header: 'חוג בישול',
 					paragraph: 'חוג בישול לילדים מגיל 9-12',
-					name: Cooking,
+					name: 'Cooking',
 				},
 				{
-					img: table1IMG,
+					img: jewelryIMG,
 					header: 'חוג תכשיטנות',
 					paragraph: 'חוג תכשיטנות לילדים בו נכין צמידים ושרשראות',
-					name: Jewelry,
+					name: 'Jewelry',
 				},
 				{
-					img: hartIMG,
+					img: rhythmicsIMG,
 					header: 'חוג ריתמיקה',
 					paragraph: 'חוג ריתמיקה לילדים',
-					name: Rhythmics,
+					name: 'Rhythmics',
 				},
 			],
 		};
@@ -66,7 +56,7 @@ export default {
 	<h1>החוגים של מרגליטף</h1>
 	<br /><br /><br /><br />
 	<div class="course-area">
-		<router-link v-for="(course, index) in courses" :key="index" :to="`/${courses.name}`" class="course">
+		<router-link v-for="(course, index) in courses" :key="index" :to="`/Course/${course.name}`" class="course">
 			<img :src="course.img" alt="Course Image" style="height: 150px" />
 			<h3>{{ course.header }}</h3>
 			<p>{{ course.paragraph }}</p>

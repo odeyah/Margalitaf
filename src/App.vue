@@ -49,20 +49,19 @@ export default {
 
 <template>
 	<div id="app">
-		<header>
-			<div class="container" style="width: 900px; height: 125px; background-color: #fe5bac">
+		<header style="padding-right: 2.5%">
+			<div class="container">
 				<div class="logo-container">
-					<img alt="לוגו של מרגליטף" class="logo" src="./assets/Logo.jpg" width="125" height="125" />
+					<img alt="לוגו של מרגליטף" class="logo" src="./assets/Logo.jpg" />
 					<span class="overlay-text">בס"ד</span>
 				</div>
-				<div class="content" style="width: 775px" ref="carousel">
+				<div class="content" ref="carousel">
 					<div class="carousel-container">
 						<div class="carousel" :style="{ transform: `translateX(${currentShift}px)` }">
 							<div class="carousel-item"><img src="./assets/cheese.jpg" alt="Image 1" /></div>
 							<div class="carousel-item"><img src="./assets/cookies.jpg" alt="Image 2" /></div>
 							<div class="carousel-item"><img src="./assets/hart.jpg" alt="Image 1" /></div>
 							<div class="carousel-item"><img src="./assets/index.jpg" alt="Image 2" /></div>
-							<div class="carousel-item"><img src="./assets/Logo.jpg" alt="Image 1" /></div>
 							<div class="carousel-item"><img src="./assets/monster.jpg" alt="Image 2" /></div>
 							<div class="carousel-item"><img src="./assets/purim.jpg" alt="Image 1" /></div>
 							<div class="carousel-item"><img src="./assets/rainbow.jpg" alt="Image 2" /></div>
@@ -99,116 +98,341 @@ export default {
 	</div>
 </template>
 <style>
-.container {
-	display: flex;
-	justify-content: space-between;
+@media (max-width: 600px) {
+	.container {
+		display: flex;
+		width: 99%;
+		height: 9%;
+		background-color: #fe5bac;
+	}
+	.logo-container {
+		position: relative;
+		display: inline-block; /* Or 'block' depending on your layout */
+		width: 30%;
+		height: 10%;
+		flex-shrink: 0;
+		padding-top: 0.25%;
+	}
+	.content {
+		position: relative;
+		display: inline-block;
+		width: 69.9%;
+		height: 9%;
+		flex-shrink: 0;
+	}
+	.carousel-container {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		max-width: 100%;
+		max-height: 100%; /* Adjust based on your design */
+	}
+
+	.carousel-container,
+	.carousel {
+		width: 100%; /* Make sure it's 100% of its parent */
+		/* Adjust height as needed */
+	}
+
+	.carousel {
+		display: flex;
+		transition: transform 1s ease-in-out;
+	}
+	a {
+		width: 300%;
+	}
+	.carousel-item {
+		position: inherit;
+		flex: none;
+		/* width: 100px; This should correspond to the width of the container */
+		max-height: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.carousel-item img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	.logo {
+		max-width: 100%;
+		min-width: 100%;
+		max-height: 110%;
+		min-height: 100%;
+	}
+	.overlay-text {
+		position: absolute;
+		top: 5%; /* Center vertically */
+		left: 88%; /* Center horizontally */
+		transform: translate(-50%, -50%); /* Adjust for exact centering */
+		color: #fe5bac; /* Or any color that stands out */
+		/* Additional styling for the text */
+	}
 }
 
-.content {
-	flex-grow: 1;
-}
-.carousel-container {
-	overflow: hidden;
-	width: 775px;
-	height: 200px; /* Adjust based on your design */
+/* Style for tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+	.container {
+		display: flex;
+		width: 99%;
+		height: 9%;
+		background-color: #fe5bac;
+	}
+	.logo-container {
+		position: relative;
+		display: inline-block; /* Or 'block' depending on your layout */
+		width: 16%;
+		height: 10%;
+		flex-shrink: 0;
+		padding-top: 0.25%;
+	}
+	.content {
+		position: relative;
+		display: inline-block;
+		width: 83.7%;
+		height: 9%;
+		flex-shrink: 0;
+	}
+	.carousel-container {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		max-width: 100%;
+		max-height: 100%; /* Adjust based on your design */
+	}
+
+	.carousel-container,
+	.carousel {
+		width: 100%; /* Make sure it's 100% of its parent */
+		/* Adjust height as needed */
+	}
+
+	.carousel {
+		display: flex;
+		transition: transform 1s ease-in-out;
+	}
+	a {
+		width: 300%;
+	}
+	.carousel-item {
+		position: inherit;
+		flex: none;
+		/* width: 100px; This should correspond to the width of the container */
+		max-height: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.carousel-item img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	.logo {
+		max-width: 100%;
+		min-width: 100%;
+		max-height: 110%;
+		min-height: 100%;
+	}
+	.overlay-text {
+		position: absolute;
+		top: 5%; /* Center vertically */
+		left: 88%; /* Center horizontally */
+		transform: translate(-50%, -50%); /* Adjust for exact centering */
+		color: #fe5bac; /* Or any color that stands out */
+		/* Additional styling for the text */
+	}
+	li {
+		margin-right: 10%;
+	}
+	.menu-bar {
+		margin-top: 0.7%;
+		/* background-color: #fe5bac; */
+		/*height: 2%; /* Adjust height as needed */
+		display: flex; /* Align items in a row */
+		justify-content: flex-start; /* Align items to the right; use 'flex-start' for left alignment */
+	}
+
+	.menu-bar ul {
+		list-style-type: none;
+		display: flex; /* Align list items in a row */
+		margin: 0;
+		padding: 0;
+	}
+
+	.menu-bar li {
+		position: relative;
+		margin-right: 10%; /* Space between menu items */
+		padding-right: 10%;
+		padding-left: 10%;
+	}
+
+	.menu-bar ul li a {
+		display: block;
+		color: white;
+		text-align: center;
+		/* padding: 1%; /*Adjust padding as needed */
+		text-decoration: none;
+	}
+
+	.menu-bar ul li a:hover {
+		background-color: #ddd;
+		color: black;
+	}
+	.menu-bar li ul.submenu {
+		display: none; /* Initially hidden */
+		position: relative;
+		top: 0; /* Position just below the menu item */
+		/*left: 0; /* Align with the left edge of the parent menu item */
+		z-index: 100; /* Ensure it's above other content */
+		background-color: #fe5bac; /* Optional: background color */
+		width: 200%;
+		/*height: 100%; /* Adjust as needed or remove if not necessary */
+	}
+
+	.menu-bar li:hover ul.submenu {
+		display: block; /* Show on hover */
+	}
+
+	/* Styles for submenu items */
+	.submenu li {
+		display: block;
+		background-color: #fe5bac;
+		/* width: 50%; */
+		color: black;
+		text-align: right;
+		/* Add more styles as needed */
+	}
 }
 
-.carousel {
-	display: flex;
-	transition: transform 1s ease-in-out;
-}
+/* Style for desktops */
+@media (min-width: 1025px) {
+	.container {
+		display: flex;
+		width: 99%;
+		height: 9%;
+		background-color: #fe5bac;
+	}
+	.logo-container {
+		position: relative;
+		display: inline-block; /* Or 'block' depending on your layout */
+		width: 150px;
+		height: 10%;
+		flex-grow: 0;
+		padding-top: 0.25%;
+	}
+	.content {
+		position: relative;
+		display: inline-block;
+		width: 85.8%;
+		height: 9%;
+		flex-grow: 0;
+	}
+	.carousel-container {
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		width: 100%;
+		height: 100%; /* Adjust based on your design */
+	}
 
-.carousel-item {
-	flex: none;
-	/* width: 100px; This should correspond to the width of the container */
-	height: 100px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+	.carousel {
+		display: flex;
+		transition: transform 1s ease-in-out;
+	}
+	a {
+		width: 300%;
+	}
+	.carousel-item {
+		position: inherit;
+		flex: none;
+		/* width: 100px; This should correspond to the width of the container */
+		height: 100%;
+		justify-content: center;
+		align-items: center;
+	}
 
-.carousel-item img {
-	max-width: 100%;
-	max-height: 100%;
-}
+	.carousel-item img {
+		max-width: 100%;
+		max-height: 100%;
+	}
 
-.logo-container {
-	position: relative;
-	display: inline-block; /* Or 'block' depending on your layout */
-}
+	.logo {
+		max-width: 100%;
+		min-width: 100%;
+		max-height: 110%;
+		min-height: 110%;
+	}
+	.overlay-text {
+		position: absolute;
+		top: 5%; /* Center vertically */
+		left: 88%; /* Center horizontally */
+		transform: translate(-50%, -50%); /* Adjust for exact centering */
+		color: #fe5bac; /* Or any color that stands out */
+		/* Additional styling for the text */
+	}
 
-.logo {
-	width: 125px;
-	height: 125px;
-}
+	li {
+		margin-right: 10%;
+	}
+	.menu-bar {
+		margin-top: 0.7%;
+		/* background-color: #fe5bac; */
+		/*height: 2%; /* Adjust height as needed */
+		display: flex; /* Align items in a row */
+		justify-content: flex-start; /* Align items to the right; use 'flex-start' for left alignment */
+	}
 
-.overlay-text {
-	position: absolute;
-	top: 5%; /* Center vertically */
-	left: 85%; /* Center horizontally */
-	transform: translate(-50%, -50%); /* Adjust for exact centering */
-	color: #fe5bac; /* Or any color that stands out */
-	/* Additional styling for the text */
-}
+	.menu-bar ul {
+		list-style-type: none;
+		display: flex; /* Align list items in a row */
+		margin: 0;
+		padding: 0;
+	}
 
-li {
-	margin-right: 80px;
-}
-.menu-bar {
-	background-color: #fe5bac;
-	height: 25px; /* Adjust height as needed */
-	display: flex; /* Align items in a row */
-	justify-content: flex-end; /* Align items to the right; use 'flex-start' for left alignment */
-}
+	.menu-bar li {
+		position: relative;
+		margin-right: 30%; /* Space between menu items */
+		padding-right: 20%;
+		padding-left: 30%;
+	}
 
-.menu-bar ul {
-	list-style-type: none;
-	display: flex; /* Align list items in a row */
-	margin: 0;
-	padding: 0;
-}
+	.menu-bar ul li a {
+		display: block;
+		color: white;
+		text-align: center;
+		/* padding: 1%; /*Adjust padding as needed */
+		text-decoration: none;
+	}
 
-.menu-bar li {
-	position: relative;
-	margin-right: 20px; /* Space between menu items */
-	padding-right: 40px;
-	padding-left: 50px;
-}
+	.menu-bar ul li a:hover {
+		background-color: #ddd;
+		color: black;
+	}
+	.menu-bar li ul.submenu {
+		display: none; /* Initially hidden */
+		position: relative;
+		top: 0; /* Position just below the menu item */
+		/*left: 0; /* Align with the left edge of the parent menu item */
+		z-index: 100; /* Ensure it's above other content */
+		background-color: #fe5bac; /* Optional: background color */
+		width: 200%;
+		/*height: 100%; /* Adjust as needed or remove if not necessary */
+	}
 
-.menu-bar ul li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 5px; /* Adjust padding as needed */
-	text-decoration: none;
-}
+	.menu-bar li:hover ul.submenu {
+		display: block; /* Show on hover */
+	}
 
-.menu-bar ul li a:hover {
-	background-color: #ddd;
-	color: black;
-}
-.menu-bar li ul.submenu {
-	display: none; /* Initially hidden */
-	position: absolute;
-	top: 100%; /* Position just below the menu item */
-	left: 0; /* Align with the left edge of the parent menu item */
-	z-index: 100; /* Ensure it's above other content */
-	background-color: #fe5bac; /* Optional: background color */
-	width: 160px;
-	height: 400px; /* Adjust as needed or remove if not necessary */
-}
-
-.menu-bar li:hover ul.submenu {
-	display: block; /* Show on hover */
-	height: 400px;
-}
-
-/* Styles for submenu items */
-.submenu li {
-	background-color: #fe5bac;
-	width: 80px;
-	color: black;
-	text-align: right;
-	/* Add more styles as needed */
+	/* Styles for submenu items */
+	.submenu li {
+		display: block;
+		background-color: #fe5bac;
+		/* width: 50%; */
+		color: black;
+		text-align: right;
+		/* Add more styles as needed */
+	}
 }
 </style>
