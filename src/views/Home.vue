@@ -75,7 +75,14 @@ export default {
 		</span>
 		<br />
 		<P>אצלנו הילדים יקבלו:</P>
-		<span>יחס אישי, חום ואהבה, ביטחון עצמי, חדוות יצירה, שפע של תוצרת, חוויה מהנה ובלתי נשכחת </span>
+		<ul style="align-self: center; list-style: none">
+			<li><span> &#9672;</span>יחס אישי</li>
+			<li><span> &#9672;</span>חום ואהבה</li>
+			<li><span> &#9672;</span>ביטחון עצמי</li>
+			<li><span> &#9672;</span>חדוות יצירה</li>
+			<li><span> &#9672;</span>שפע של תוצרת</li>
+			<li><span> &#9672;</span>חוויה מהנה ובלתי נשכחת</li>
+		</ul>
 		<br /><br />
 		<span style="padding-right: 120px; font-size: large">נשמח לראותכם אצלנו - צוות </span
 		><span style="color: #fe5bac; font-size: large"><strong style="font-weight: 1000">מרגליטף</strong></span>
@@ -92,6 +99,15 @@ export default {
 </template>
 
 <style>
+h1 {
+	position: absolute; /* Absolute positioning for the title */
+	right: 15%; /* Adjust position as needed */
+	top: 0; /* Ensure it aligns properly */
+	left: 15%;
+	color: #fe5bac;
+	text-align: center;
+}
+
 .course-area {
 	display: flex;
 	flex-wrap: wrap;

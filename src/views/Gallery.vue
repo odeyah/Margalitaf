@@ -1,7 +1,7 @@
 <script>
 import '@fortawesome/fontawesome-free/css/all.css';
-import cheeseIMG from '../assets/cheese.jpg';
-import cookiesIMG from '../assets/cookies.jpg';
+import cheeseIMG from '../assets/testcheese.jpg';
+import cookiesIMG from '../assets/testcookies.jpg';
 import indexIMG from '../assets/index.jpg';
 import monsterIMG from '../assets/monster.jpg';
 import tableIMG from '../assets/table.jpg';
@@ -61,65 +61,89 @@ export default {
 </script>
 
 <template>
-	<div class="gallery" style="width: 700px">
+	<div class="gallery">
 		<h1 style="color: #fe5bac">גלריית תמונות</h1>
+		<br /><br />
 		<Flipbook
-			style="width: 700px; padding-right: 80px"
+			style="width: 100%; max-width: 70vw"
 			ref="flipbook"
 			class="flipbook"
 			:pages="courses.map(course => course.img)"
 		/>
-		<div class="nav-arrow left-arrow" @click="flipRight"><i class="fa-sharp fa-solid fa-forward"></i></div>
-		<div class="nav-arrow right-arrow" @click="flipLeft"><i class="fa-sharp fa-solid fa-backward"></i></div>
+		<div class="nav-arrow left-arrow" @click="flipRight">
+			<i class="fa-sharp fa-solid fa-forward"></i>
+		</div>
+		<div class="nav-arrow right-arrow" @click="flipLeft">
+			<i class="fa-sharp fa-solid fa-backward"></i>
+		</div>
 	</div>
 </template>
 
 <style>
-.flipbook {
-	position: relative;
-	width: 70vw;
-	height: 70vh;
-}
-.flipbook img {
-	max-width: 100%; /* Ensures image is not larger than its container */
-	height: auto; /* Maintains aspect ratio */
-	width: 250px; /* Set your desired width */
-	padding-left: 15px;
-	padding-right: 15px;
-	background-color: #fe5bac;
-}
 h1 {
-	position: absolute;
-	right: 360px;
+	position: absolute; /* Absolute positioning for the title */
+	right: 15%; /* Adjust position as needed */
+	top: 0; /* Ensure it aligns properly */
+	left: 15%;
+	color: #fe5bac;
+	text-align: center;
+	font-size: 6vw;
 }
+
+.gallery {
+	width: 70%; /* Set gallery width to 70% of the screen */
+	margin: auto; /* Center the gallery horizontally */
+	position: relative; /* Ensure proper positioning */
+	/*background-color: #fe5bac; */
+}
+
+.flipbook {
+	width: 100%; /* Occupy full width of parent */
+	max-width: 70vw; /* Limit max width to 70% of viewport width */
+	height: 70vh; /* Set height as needed */
+	display: flex; /* Use flexbox for image alignment */
+	justify-content: center; /* Center align images */
+	padding-top: 10%;
+}
+
+.flipbook img {
+	max-width: 100%; /* Ensures image does not exceed parent width */
+	height: auto; /* Maintain aspect ratio */
+}
+
 .nav-arrow {
 	position: absolute;
 	font-size: 30px;
 	width: 30px;
 	height: 30px;
-	top: 80%;
+	top: 60%; /* Adjust vertically centered position */
 	transform: translateY(-50%);
-	/* Style your buttons (size, colors, etc.) */
+	color: #fe5bac; /* Arrow color */
+	cursor: pointer; /* Make it a pointer on hover */
 }
 
 .left-arrow {
-	right: 75px; /* Adjust as needed based on the width of your button */
-	top: 380px;
-	color: #fe5bac;
+	right: 10px; /* Position the left arrow */
 }
-.flipbook::after {
-	content: '';
-	position: absolute;
-	top: 85px;
-	left: 45.72%;
-	width: 3px; /* Width of the line */
-	height: 64%;
-	background-color: peachpuff;
-	transform: translateX(-50%);
-}
+
 .right-arrow {
-	left: 595px; /* Adjust as needed based on the width of your button */
-	top: 380px;
-	color: #fe5bac;
+	left: 10px; /* Position the right arrow */
+}
+@media (max-width: 568px) {
+	flipbook::after {
+		display: none;
+	}
+}
+@media (min-width: 569px) {
+	.flipbook::after {
+		content: '';
+		position: absolute;
+		top: 90px;
+		left: 49.9%;
+		width: 3px; /* Width of the line */
+		height: 84%;
+		background-color: peachpuff;
+		transform: translateX(-50%);
+	}
 }
 </style>
