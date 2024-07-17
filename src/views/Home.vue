@@ -60,52 +60,56 @@ export default {
 </script>
 <template>
 	<div class="mainDiv">
-		<h1 style="color: #fe5bac">בית החוגים של מרגליטף</h1>
+		<div><h1>בית החוגים של מרגליטף</h1></div>
 		<br /><br /><br /><br />
-		<span>בית החוגים של </span>
-		<span style="color: #fe5bac"><strong style="font-weight: 1000">מרגליטף</strong></span>
-		<span>
-			מציע מגוון חוגים חוויתיים לילדים מגיל 3.5 עד 12
+		<div class="homeDiv">
+			<span>בית החוגים של </span>
+			<span style="color: #fe5bac"><strong style="font-weight: 1000">מרגליטף</strong></span>
+			<span>
+				מציע מגוון חוגים חוויתיים לילדים מגיל 3.5 עד 12
+				<br />
+				<br />
+				בחוגים שלנו הילדים עושים הכל הם מכינים הם יוצרים
+				<br />
+				<br />
+				והכל בליווי צמוד של מרגלית מורה וגננת עם ניסיון רב בהנחיית חוגים לילדים
+			</span>
 			<br />
+			<P>אצלנו הילדים יקבלו:</P>
+			<ul style="align-self: center; list-style: none">
+				<li><span> &#9672;</span>יחס אישי</li>
+				<li><span> &#9672;</span>חום ואהבה</li>
+				<li><span> &#9672;</span>ביטחון עצמי</li>
+				<li><span> &#9672;</span>חדוות יצירה</li>
+				<li><span> &#9672;</span>שפע של תוצרת</li>
+				<li><span> &#9672;</span>חוויה מהנה ובלתי נשכחת</li>
+			</ul>
+			<br /><br />
+			<span style="padding-right: 120px; font-size: large">נשמח לראותכם אצלנו - צוות </span
+			><span style="color: #fe5bac; font-size: large"><strong style="font-weight: 1000">מרגליטף</strong></span>
+			<p style="padding-right: 50px">לפרטים נוספים והרשמה התקשרו למרגלית 0528460331</p>
 			<br />
-			בחוגים שלנו הילדים עושים הכל הם מכינים הם יוצרים
-			<br />
-			<br />
-			והכל בליווי צמוד של מרגלית מורה וגננת עם ניסיון רב בהנחיית חוגים לילדים
-		</span>
-		<br />
-		<P>אצלנו הילדים יקבלו:</P>
-		<ul style="align-self: center; list-style: none">
-			<li><span> &#9672;</span>יחס אישי</li>
-			<li><span> &#9672;</span>חום ואהבה</li>
-			<li><span> &#9672;</span>ביטחון עצמי</li>
-			<li><span> &#9672;</span>חדוות יצירה</li>
-			<li><span> &#9672;</span>שפע של תוצרת</li>
-			<li><span> &#9672;</span>חוויה מהנה ובלתי נשכחת</li>
-		</ul>
-		<br /><br />
-		<span style="padding-right: 120px; font-size: large">נשמח לראותכם אצלנו - צוות </span
-		><span style="color: #fe5bac; font-size: large"><strong style="font-weight: 1000">מרגליטף</strong></span>
-		<p style="padding-right: 50px">לפרטים נוספים והרשמה התקשרו למרגלית 0528460331</p>
-		<br />
-		<div class="course-area">
-			<router-link v-for="(course, index) in courses" :key="index" :to="`/Course/${course.path}`" class="course">
-				<img :src="course.img" alt="Course Image" style="height: 150px" />
-				<h3>{{ course.header }}</h3>
-				<p>{{ course.paragraph }}</p>
-			</router-link>
+			<div class="course-area">
+				<router-link v-for="(course, index) in courses" :key="index" :to="`/Course/${course.path}`" class="course">
+					<img :src="course.img" alt="Course Image" style="height: 150px" />
+					<h3>{{ course.header }}</h3>
+					<p>{{ course.paragraph }}</p>
+				</router-link>
+			</div>
 		</div>
 	</div>
 </template>
 
 <style>
 h1 {
-	position: absolute; /* Absolute positioning for the title */
-	right: 15%; /* Adjust position as needed */
-	top: 0; /* Ensure it aligns properly */
-	left: 15%;
+	position: relative; /* Absolute positioning for the title */
+	/* right: 15%; Adjust position as needed */
+	top: 95%; /* Ensure it aligns properly */
+	/* left: 15%; */
 	color: #fe5bac;
 	text-align: center;
+	margin-top: 1rem;
+	font-size: 6vw;
 }
 
 .course-area {
@@ -131,13 +135,53 @@ h1 {
 /* Responsive adjustments if needed */
 @media (max-width: 600px) {
 	.course {
-		flex-basis: calc(50% - 10px); /* Two items per row on smaller screens */
+		flex-basis: calc(100% - 20px); /* Two items per row on smaller screens */
+	}
+	.mainDiv {
+		width: 100%;
+		font-size: 18px;
+		font-family: Helvetica, sans-serif;
+		padding-right: 1%;
+		padding-left: 1%;
 	}
 }
-.mainDiv {
-	width: 700px;
-	font-size: 18px;
-	font-family: Helvetica, sans-serif;
-	padding-right: 70px;
+@media (min-width: 601px) and (max-width: 1024px) {
+	.course {
+		flex-basis: calc(50% - 20px); /* Two items per row on smaller screens */
+	}
+	.mainDiv {
+		width: 100%;
+		font-size: 25px;
+		font-family: Helvetica, sans-serif;
+		padding-right: 3%;
+		padding-left: 3%;
+	}
+}
+@media (min-width: 1025px) {
+	.course {
+		flex-basis: calc(33.333% - 20px); /* Two items per row on smaller screens */
+	}
+	.mainDiv {
+		width: 100%;
+		font-size: 30px;
+		font-family: Helvetica, sans-serif;
+		padding-right: 3%;
+		padding-left: 3%;
+	}
+}
+@media (min-width: 920px) {
+	.homeDiv {
+		padding-top: 15vh;
+	}
+}
+@media (max-width: 1200px) {
+	.course {
+		width: calc(50% - 20px);
+	}
+}
+@media (min-width: 1700px) {
+	.homeDiv {
+		padding-top: 30vh;
+	}
 }
 </style>

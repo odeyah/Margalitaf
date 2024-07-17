@@ -64,7 +64,7 @@ export default {
 
 <template>
 	<div id="app">
-		<header style="padding-right: 2%">
+		<header>
 			<div class="container">
 				<div class="logo-container">
 					<img alt="לוגו של מרגליטף" class="logo" src="./assets/Logo.jpg" />
@@ -125,8 +125,6 @@ export default {
 				</div>
 			</div>
 		</header>
-		<br />
-		<br />
 		<main>
 			<router-view />
 		</main>
@@ -134,6 +132,9 @@ export default {
 </template>
 <style>
 @media (max-width: 600px) {
+	header {
+		right: -100vw;
+	}
 	.container {
 		display: flex;
 		width: 99%;

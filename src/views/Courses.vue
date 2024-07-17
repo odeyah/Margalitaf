@@ -67,7 +67,14 @@ export default {
 h1 {
 	color: #fe5bac;
 }
-.course-area {
-	width: 700px;
+@media (max-width: 600px) {
+	.course-area {
+		width: 90%;
+	}
+}
+@media (min-width: 601px) {
+	.course-area {
+		width: 70%;
+	}
 }
 </style>
