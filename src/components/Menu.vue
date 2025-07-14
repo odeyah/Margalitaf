@@ -472,26 +472,26 @@ export default {
 		background-color: #ddd;
 		color: black;
 	}
-	.menu-bar li ul.submenu {
-		display: none; /* Initially hidden*/
-		position: absolute; /* Position relative to the parent*/
-		top: 100%; /* Position just below the menu item*/
-		left: 0; /* Align with the left edge of the parent menu item*/
-		z-index: 1000; /* Ensure it's above other content*/
-		background-color: #fe5bac; /* Optional: background color*/
-		width: 25%; /* Adjust width as needed*/
-	}
+	/*.menu-bar li ul.submenu {
+		display: none; /* Initially hidden
+		position: absolute; /* Position relative to the parent
+		top: 100%; /* Position just below the menu item
+		left: 0; /* Align with the left edge of the parent menu item
+		z-index: 1000; /* Ensure it's above other content
+		background-color: #fe5bac; /* Optional: background color
+		width: 25%; /* Adjust width as needed
+		}
 
 	.menu-bar li:hover ul.submenu {
-		display: block; /* Show on hover*/
-	}
+		display: block; /* Show on hover
+	} */
 
 	/* Styles for submenu items*/
-	.submenu li {
+	/*.submenu li {
 		display: block;
 		background-color: #fe5bac;
 		color: black;
-		/* text-align: right; */
-	}
+		text-align: right; 
+	}*/
 }
 </style>

@@ -61,7 +61,7 @@ export default {
 <template>
 	<div class="mainDiv">
 		<div><h1>בית החוגים של מרגליטף</h1></div>
-		<br /><br /><br /><br />
+		<br /><br />
 		<div class="homeDiv">
 			<span>בית החוגים של </span>
 			<span style="color: #fe5bac"><strong style="font-weight: 1000">מרגליטף</strong></span>
@@ -84,9 +84,10 @@ export default {
 				<li><span> &#9672;</span>שפע של תוצרת</li>
 				<li><span> &#9672;</span>חוויה מהנה ובלתי נשכחת</li>
 			</ul>
-			<br /><br />
-			<span style="padding-right: 120px; font-size: large">נשמח לראותכם אצלנו - צוות </span
-			><span style="color: #fe5bac; font-size: large"><strong style="font-weight: 1000">מרגליטף</strong></span>
+			<br />
+			<span style="padding-right: 120px; font-size: larger">נשמח לראותכם אצלנו - צוות </span
+			><span style="color: #fe5bac; font-size: larger"><strong style="font-weight: 1000">מרגליטף</strong></span>
+			<br />
 			<p style="padding-right: 50px">לפרטים נוספים והרשמה התקשרו למרגלית 0528460331</p>
 			<br />
 			<div class="course-area">
@@ -169,19 +170,9 @@ h1 {
 		padding-left: 3%;
 	}
 }
-@media (min-width: 920px) {
-	.homeDiv {
-		padding-top: 15vh;
-	}
-}
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
 	.course {
 		width: calc(50% - 20px);
-	}
-}
-@media (min-width: 1700px) {
-	.homeDiv {
-		padding-top: 30vh;
 	}
 }
 </style>
